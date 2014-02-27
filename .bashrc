@@ -14,6 +14,16 @@ vim()
   fi
 }
 
+# use selecta to select file to open with vim
+vs()
+{
+  if [ $# -eq 1 ]; then
+    command vim $1/$(ls $1 | selecta)
+  else
+    command vim $(ls | selecta)
+  fi
+}
+
 # minimal ls with dates edited
 lst()
 {
@@ -26,10 +36,16 @@ shopt -s histverify
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
 alias gr="grep -Iir --exclude-dir={.git,.AppleDouble}"
 
+alias v="vim"
+
 # runs makefile for project in current directory (requires amake)
-alias mr="amake run"
+alias mg="amake go"
 # runs test makefile for project in current directory (requires amake)
 alias mt="amake test"
+
+# quickly create server running in background
+alias pys="python -m SimpleHTTPServer &"
+alias npys="nohup python -m SimpleHTTPServer &"
 
 # quick ssh shortcuts
 alias dev="ssh pdougherty@dev.arisgames.org"
@@ -40,4 +56,9 @@ alias phildo="ssh phildo@phildogames.com"
 ARIS="~/Desktop/iOSClient/ARIS.xcworkspace"
 alias aris="open ~/Desktop/iOSClient/ARIS.xcworkspace"
 alias cdaris="cd ~/Desktop/iOSClient"
+
+# for r2l (route 2 local) (github.com/Phildos/r2l)
+R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,twitter.com,youtube.com"
+alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
+alias unblock="sudo r2l -u"
 

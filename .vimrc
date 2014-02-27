@@ -58,6 +58,10 @@ if has("autocmd")
     \| exe "normal! g'\"" | endif
 endif
 
+" quit quits all buffers- requires cmdalias.vim
+"call CmdAlias('q','qa')
+"call CmdAlias('x','xa')
+
 " treats ":W" and ":Q" as their lowercase counterparts (no need to let go of shift)
 command W w
 command Q q
@@ -73,15 +77,21 @@ nnoremap gn :bn<CR>
 nnoremap gl :ls<CR>
 nnoremap gb :ls<CR>:b
 
+" saves/quits all without warning (even if 'unvisited buffers' exist)
+nnoremap ZZ :wqa!<CR>
+
+" split window handling
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-j> <C-w>j<C-w>_
+nnoremap <C-k> <C-w>k<C-w>_
+
 " for a.vim - finds counterpart 'h'->'c' files
-nnoremap <C-h> :A<CR>
+nnoremap <C-a> :A<CR>
 
-" run (requires amake)
-nnoremap <C-r> :!amake run<CR>
-
-" test (requires amake)
-nnoremap <C-t> :!amake test<CR>
+" go (requires amake)
+nnoremap <C-g> :!amake go<CR>
 
 " remove highlights
-nnoremap <Space> :nohl
+nnoremap <Space> :nohl<CR>
 
