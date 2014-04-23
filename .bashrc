@@ -2,6 +2,8 @@
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
+# source tmux
+tmux source-file ~/.tmux.conf
 
 # when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO), 
 # it automatically assumes that you intended to open the files with that prefix, but tab-completion cut you short.
@@ -24,6 +26,7 @@ vs()
   fi
 }
 
+alias ls="ls -G"
 # minimal ls with dates edited
 lst()
 {
