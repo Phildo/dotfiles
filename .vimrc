@@ -95,3 +95,18 @@ nnoremap <C-g> :!amake go<CR>
 " remove highlights
 nnoremap <Space> :nohl<CR>
 
+" show whitespace
+set list listchars=tab:¬-,trail:·,eol:↵
+hi NonText ctermfg=8
+
+" vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+call vundle#end()
+
+filetype plugin indent on
+

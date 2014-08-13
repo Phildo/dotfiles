@@ -2,8 +2,6 @@
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
-# source tmux
-tmux source-file ~/.tmux.conf
 
 # when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO), 
 # it automatically assumes that you intended to open the files with that prefix, but tab-completion cut you short.
@@ -30,7 +28,7 @@ alias ls="ls -G"
 # minimal ls with dates edited
 lst()
 {
-  ls -l "$@" | awk '!/^total/ { printf "%-20s %3s %2d %8s\n", $9, $6, $7, $8 }'
+  ls -l "$@" | awk '!/^total/ { printf "%-30s %3s %2d %8s\n", $9, $6, $7, $8 }'
 }
 
 # verifies '!' shell expansion before execution
@@ -38,8 +36,10 @@ shopt -s histverify
 
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
 alias gr="grep -Iir --exclude-dir={.git,.AppleDouble}"
+alias gdb="gdb -q"
 
 alias v="vim"
+alias c="clear"
 
 # runs makefile for project in current directory (requires amake)
 alias mg="amake go"
@@ -60,8 +60,20 @@ ARIS="~/Desktop/iOSClient/ARIS.xcworkspace"
 alias aris="open ~/Desktop/iOSClient/ARIS.xcworkspace"
 alias cdaris="cd ~/Desktop/iOSClient"
 
+FLAT="~/Desktop/flat"
+alias cdflat="cd $FLAT"
+
+WTL="~/Desktop/win-the-lottery"
+alias cdwtl="cd $WTL"
+
 # for r2l (route 2 local) (github.com/Phildos/r2l)
 R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,twitter.com,youtube.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
+
+# Android dev (this is obnoxious)
+export ANDROID_SDK="/Developer/android-sdk"
+export ANDROID_NDK="/Developer/android-ndk"
+export ANDROID_MOTO="/Developer/moto"
+export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$ANDROID_MOTO"
 
