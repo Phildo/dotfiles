@@ -34,6 +34,14 @@ lst()
 # verifies '!' shell expansion before execution
 shopt -s histverify
 
+# draw a line across the terminal (clearly shows beginning of next command without clearing history)
+line()
+{
+  i=`tput cols`;
+  while [ $i -gt 1 ]; do echo -n '-'; i=$(($i-1)); done
+  echo '-'
+}
+
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
 alias gr="grep -Iir --exclude-dir={.git,.AppleDouble}"
 alias gdb="gdb -q"
@@ -76,4 +84,3 @@ export ANDROID_SDK="/Developer/android-sdk"
 export ANDROID_NDK="/Developer/android-ndk"
 export ANDROID_MOTO="/Developer/moto"
 export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$ANDROID_MOTO"
-
