@@ -7,4 +7,5 @@ ln -s $dir/.vimrc ~/.vimrc
 ln -s $dir/.tmux.conf ~/.tmux.conf
 ln -s $dir/.gitconfig ~/.gitconfig
 ln -s $dir/.gitignore ~/.gitignore
+ln -s $dir/.githelpers ~/.githelpers
 
