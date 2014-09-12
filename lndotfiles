@@ -5,4 +5,5 @@ cd ~
 ln -s $dir/.bashrc ~/.bashrc
 ln -s $dir/.vimrc ~/.vimrc
 ln -s $dir/.tmux.conf ~/.tmux.conf
+ln -s $dir/.gitconfig ~/.gitconfig
 
