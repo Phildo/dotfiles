@@ -24,6 +24,12 @@ vs()
   fi
 }
 
+# use grep to open all files containing text (duplicates gr logic)
+vg()
+{
+  vim `grep -Ilir --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
+}
+
 alias ls="ls -G"
 # minimal ls with dates edited
 lst()
@@ -56,11 +62,11 @@ alias mt="amake test"
 
 # quickly create server running in background
 alias pys="python -m SimpleHTTPServer &"
-alias npys="nohup python -m SimpleHTTPServer &"
+alias npys="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
 
 # quick ssh shortcuts
 alias dev="ssh pdougherty@dev.arisgames.org"
-alias prod="ssh pdougherty@methane.arisgames.org"
+alias prod="ssh pdougherty@propane.arisgames.org"
 alias phildo="ssh phildo@phildogames.com"
 
 # ARIS work shortcuts
@@ -74,10 +80,15 @@ alias cdflat="cd $FLAT"
 WTL="~/Desktop/win-the-lottery"
 alias cdwtl="cd $WTL"
 
+FG="~/Desktop/four-generals"
+alias cdfg="cd $FG"
+
 # for r2l (route 2 local) (github.com/Phildos/r2l)
 R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,twitter.com,youtube.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
+
+export EDITOR="vim"
 
 # Android dev (this is obnoxious)
 export ANDROID_SDK="/Developer/android-sdk"
