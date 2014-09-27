@@ -1,5 +1,5 @@
 " Read .bashrc
-set shell=bash\ --login
+" set shell=bash\ --login
 
 " Auto cd to directory
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
@@ -50,7 +50,7 @@ set viminfo='100,<200,s10,h
 filetype plugin indent off
 
 " sets quick timeout for paren matching
-let g:matchparen_insert_timeout=5 
+let g:matchparen_insert_timeout=5
 
 " Open file in spot you left it
 if has("autocmd")

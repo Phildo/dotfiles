@@ -1,7 +1,8 @@
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-  . /etc/bashrc
-fi
+[[ -r /etc/bashrc ]] && . /etc/bashrc
+
+#put /usr/local/bin before /usr/bin (already in PATH) for brew stuff
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts"
+export PS1="\W \$ "
 
 # when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO), 
 # it automatically assumes that you intended to open the files with that prefix, but tab-completion cut you short.
@@ -61,8 +62,11 @@ alias mg="amake go"
 alias mt="amake test"
 
 # quickly create server running in background
+#[n]ohup [py]thon [s]erver [s]ilent
 alias pys="python -m SimpleHTTPServer &"
-alias npys="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
+alias pyss="python -m SimpleHTTPServer >/dev/null 2>&1 &"
+alias npys="nohup python -m SimpleHTTPServer &"
+alias npyss="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
 
 # quick ssh shortcuts
 alias dev="ssh pdougherty@dev.arisgames.org"
@@ -95,3 +99,8 @@ export ANDROID_SDK="/Developer/android-sdk"
 export ANDROID_NDK="/Developer/android-ndk"
 export ANDROID_MOTO="/Developer/moto"
 export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$ANDROID_MOTO"
+
+alias tmuxn="tmux new -s do"
+alias tmuxa="tmux attach -t do"
+alias tmuxd="tmuxn || tmuxa"
+if [ -z $TMUX ]; then tmuxn || tmuxa; fi; #start/attach tmux sess
