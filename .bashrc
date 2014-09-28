@@ -38,8 +38,11 @@ lst()
   ls -l "$@" | awk '!/^total/ { printf "%-30s %3s %2d %8s\n", $9, $6, $7, $8 }'
 }
 
-# verifies '!' shell expansion before execution
-shopt -s histverify
+#strip out useful ip addresses from ifconfig
+ip()
+{
+  ifconfig | egrep '\d\d?\d?\.\d\d?\d?\.\d\d?\d?\.\d\d?\d?' | awk '{ print $2 }'
+}
 
 # draw a line across the terminal (clearly shows beginning of next command without clearing history)
 line()
@@ -48,6 +51,9 @@ line()
   while [ $i -gt 1 ]; do echo -n '-'; i=$(($i-1)); done
   echo '-'
 }
+
+# verifies '!' shell expansion before execution
+shopt -s histverify
 
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
 alias gr="grep -Iir --exclude-dir={.git,.AppleDouble}"
