@@ -97,7 +97,7 @@ nnoremap <Space> :nohl<CR>
 
 " show whitespace
 set list listchars=tab:¬-,trail:·,eol:↵
-hi NonText ctermfg=8
+highlight NonText ctermfg=236
 
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim

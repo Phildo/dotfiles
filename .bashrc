@@ -38,6 +38,18 @@ lst()
   ls -l "$@" | awk '!/^total/ { printf "%-30s %3s %2d %8s\n", $9, $6, $7, $8 }'
 }
 
+# recursive ls with maxdepth
+lsr()
+{
+  if [ $# -eq 1 ]; then
+    find $1
+  elif [ $# -eq 2 ]; then
+    find $1 -maxdepth $2
+  else
+    find .
+  fi
+}
+
 #strip out useful ip addresses from ifconfig
 ip()
 {
@@ -108,5 +120,4 @@ export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$
 
 alias tmuxn="tmux new -s do"
 alias tmuxa="tmux attach -t do"
-alias tmuxd="tmuxn || tmuxa"
-if [ -z $TMUX ]; then tmuxn || tmuxa; fi; #start/attach tmux sess
+alias mux="tmuxn || tmuxa"
