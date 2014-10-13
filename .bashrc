@@ -28,7 +28,7 @@ vs()
 # use grep to open all files containing text (duplicates gr logic)
 vg()
 {
-  vim `grep -Ilir --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
+  vim `grep -Ilir --exclude=tags --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
 }
 
 alias ls="ls -G"
@@ -68,7 +68,7 @@ line()
 shopt -s histverify
 
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
-alias gr="grep -Iir --exclude-dir={.git,.AppleDouble}"
+alias gr="grep -Iir --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gdb="gdb -q"
 
 alias v="vim"

@@ -62,6 +62,12 @@ endif
 "call CmdAlias('q','qa')
 "call CmdAlias('x','xa')
 
+" leave insert mode auto-saves
+au InsertLeave * if &mod && expand('%')!=''|write|endif
+
+" leave insert mode quickly
+set timeout timeoutlen=1000 ttimeoutlen=100
+
 " treats ":W" and ":Q" as their lowercase counterparts (no need to let go of shift)
 command W w
 command Q q
@@ -90,7 +96,7 @@ nnoremap <C-k> <C-w>k<C-w>_
 nnoremap <C-a> :A<CR>
 
 " go (requires amake)
-nnoremap <C-g> :!amake go<CR>
+nnoremap <C-g> :!amake<CR>
 
 " remove highlights
 nnoremap <Space> :nohl<CR>
