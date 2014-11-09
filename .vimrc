@@ -4,16 +4,19 @@
 " Auto cd to directory
 autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
-" Not entirely sure...
+" vim, not vi
 set nocompatible
 
 " Shows what you're typing as command
 set showcmd
 
 " Syntax
-filetype off
+filetype on
 syntax enable
 syntax on
+
+" Disallow auto-inserted comments (hitting enter on comment line won't create another one)
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Autoindent
 set autoindent
@@ -35,7 +38,7 @@ set number
 set ignorecase
 set smartcase
 
-" Incremental search (?)
+" Incremental search
 set incsearch
 
 " Highlight search
@@ -57,10 +60,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal! g'\"" | endif
 endif
-
-" quit quits all buffers- requires cmdalias.vim
-"call CmdAlias('q','qa')
-"call CmdAlias('x','xa')
 
 " leave insert mode auto-saves
 au InsertLeave * if &mod && expand('%')!=''|write|endif
@@ -113,6 +112,4 @@ Plugin 'gmarik/vundle'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()
-
-filetype plugin indent on
 
