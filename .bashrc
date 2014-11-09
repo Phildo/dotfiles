@@ -37,6 +37,12 @@ vg()
   vim `grep -Ilir --exclude=tags --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
 }
 
+# use find to open all files w/ name containing text
+vf()
+{
+  vim `find . -iname "$@" | xargs`
+}
+
 alias ls="ls -G"
 # minimal ls with dates edited
 lst()
