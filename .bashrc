@@ -8,8 +8,14 @@ export PS1="\W \$ "
 # it automatically assumes that you intended to open the files with that prefix, but tab-completion cut you short.
 vim()
 {
-  if [ $# -eq 1 ] && [[ ${1} =~ \.$ ]] && [ ! -f ${1} ] && ls ${1}* > /dev/null 2>&1; then
-    command vim ${1}*
+  if [ $# -eq 1 ] && [ ! -f ${1} ]; then
+    if [[ ${1} =~ \.$ ]] && ls ${1}* > /dev/null 2>&1; then
+     command vim ${1}*
+    elif ls ${1}\.* > /dev/null 2>&1; then
+     command vim ${1}*
+    else
+      command vim "$@"
+    fi
   else
     command vim "$@"
   fi
