@@ -44,6 +44,12 @@ vf()
 }
 
 alias ls="ls -G"
+
+cdl()
+{
+  cd "$@"; ls
+}
+
 # minimal ls with dates edited
 lst()
 {

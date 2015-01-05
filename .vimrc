@@ -104,6 +104,10 @@ nnoremap <Space> :nohl<CR>
 set list listchars=tab:¬-,trail:·,eol:↵
 highlight NonText ctermfg=236
 
+" gcc error traversal
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cnet<CR>
+
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
