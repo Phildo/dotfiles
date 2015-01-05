@@ -106,7 +106,7 @@ highlight NonText ctermfg=236
 
 " gcc error traversal
 nnoremap [q :cprevious<CR>
-nnoremap ]q :cnet<CR>
+nnoremap ]q :cnext<CR>
 
 " vundle
 set rtp+=~/.vim/bundle/Vundle.vim
