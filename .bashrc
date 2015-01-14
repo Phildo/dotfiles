@@ -114,11 +114,8 @@ ARIS="~/Desktop/iOSClient/ARIS.xcworkspace"
 alias aris="open ~/Desktop/iOSClient/ARIS.xcworkspace"
 alias cdaris="cd ~/Desktop/iOSClient"
 
-FLAT="~/Desktop/flat"
-alias cdflat="cd $FLAT"
-
-WTL="~/Desktop/win-the-lottery"
-alias cdwtl="cd $WTL"
+DESK="~/Desktop"
+alias cddesk="cd $DESK"
 
 FG="~/Desktop/four-generals"
 alias cdfg="cd $FG"

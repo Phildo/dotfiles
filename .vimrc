@@ -94,15 +94,18 @@ nnoremap <C-k> <C-w>k<C-w>_
 " for a.vim - finds counterpart 'h'->'c' files
 nnoremap <C-a> :A<CR>
 
-" go (requires amake)
-nnoremap <C-g> :!amake<CR>
-
 " remove highlights
 nnoremap <Space> :nohl<CR>
 
 " show whitespace
 set list listchars=tab:¬-,trail:·,eol:↵
 highlight NonText ctermfg=236
+
+" use custom make
+set makeprg=amake
+
+" mapping for make
+nnoremap <C-g> :make<CR>
 
 " gcc error traversal
 nnoremap [q :cprevious<CR>
