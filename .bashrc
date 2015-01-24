@@ -43,6 +43,12 @@ vf()
   vim `find . -iname "$@" | xargs`
 }
 
+# i often accidentally a space before the 't' (ex: "gi tstatus")
+gi()
+{
+  git `echo $@ | sed 's/^t//'`
+}
+
 alias ls="ls -G"
 
 cdl()
@@ -107,6 +113,8 @@ alias npyss="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
 # quick ssh shortcuts
 alias dev="ssh pdougherty@dev.arisgames.org"
 alias prod="ssh pdougherty@propane.arisgames.org"
+alias neo="ssh root@neo.arisgames.org"
+alias trinity="ssh root@trinity.arisgames.org"
 alias phildo="ssh phildo@phildogames.com"
 
 # ARIS work shortcuts
