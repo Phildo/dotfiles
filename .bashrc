@@ -129,7 +129,7 @@ FG="~/Desktop/four-generals"
 alias cdfg="cd $FG"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
-R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,twitter.com,youtube.com"
+R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,imgur.com,twitter.com,youtube.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
 
