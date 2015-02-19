@@ -1,5 +1,4 @@
 [[ -r /etc/bashrc ]] && . /etc/bashrc
-[[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
 
 #put /usr/local/bin before /usr/bin (already in PATH) for brew stuff
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts"
@@ -145,3 +144,5 @@ export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$
 alias tmuxn="tmux new -s do"
 alias tmuxa="tmux attach -t do"
 alias mux="tmuxn || tmuxa"
+
+[[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
