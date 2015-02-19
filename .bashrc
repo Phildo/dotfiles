@@ -5,7 +5,7 @@
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts"
 export PS1="\W \$ "
 
-# when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO), 
+# when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO),
 # it automatically assumes that you intended to open the files with that prefix, but tab-completion cut you short.
 vim()
 {
