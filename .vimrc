@@ -112,6 +112,7 @@ nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 
 " vundle
+if isdirectory("~/.vim/bundle")
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -119,4 +120,5 @@ Plugin 'gmarik/vundle'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
 call vundle#end()
+endif
 
