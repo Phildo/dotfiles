@@ -1,4 +1,5 @@
 [[ -r /etc/bashrc ]] && . /etc/bashrc
+[[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
 
 #put /usr/local/bin before /usr/bin (already in PATH) for brew stuff
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts"
