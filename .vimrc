@@ -15,6 +15,9 @@ filetype on
 syntax enable
 syntax on
 
+" Syntax highlight "include c++" filetypes
+au BufNewFile,BufRead *.icpp set filetype=cpp
+
 " Disallow auto-inserted comments (hitting enter on comment line won't create another one)
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 

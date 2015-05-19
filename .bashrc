@@ -46,7 +46,7 @@ vf()
 # i often accidentally a space before the 't' (ex: "gi tstatus")
 gi()
 {
-  git `echo $@ | sed 's/^t//'`
+  git `echo "$@" | sed 's/^t//'`
 }
 
 alias ls="ls -G"
@@ -127,6 +127,8 @@ alias cddesk="cd $DESK"
 
 FG="~/Desktop/four-generals"
 alias cdfg="cd $FG"
+
+alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
 R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,imgur.com,twitter.com,youtube.com"
