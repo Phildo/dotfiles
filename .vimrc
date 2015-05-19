@@ -111,6 +111,9 @@ nnoremap <C-g> :make<CR>
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
 
+set laststatus=2
+set statusline=%-3.3n%=%F
+
 " vundle
 if isdirectory("~/.vim/bundle")
 set rtp+=~/.vim/bundle/Vundle.vim
