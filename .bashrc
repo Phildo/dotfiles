@@ -117,6 +117,16 @@ alias trinity="ssh root@trinity.arisgames.org"
 alias morpheus="ssh root@morpheus.arisgames.org"
 alias phildo="ssh phildo@phildogames.com"
 
+stash()
+{
+  scp $1 phildo@phildogames.com:~/stash/
+}
+
+snatch()
+{
+  scp phildo@phildogames.com:~/stash/$1 .
+}
+
 # ARIS work shortcuts
 ARIS="~/Desktop/iOSClient/ARIS.xcworkspace"
 alias aris="open ~/Desktop/iOSClient/ARIS.xcworkspace"
@@ -127,6 +137,9 @@ alias cddesk="cd $DESK"
 
 FG="~/Desktop/four-generals"
 alias cdfg="cd $FG"
+
+PIX="~/Desktop/pixQL"
+alias cdpix="cd $PIX"
 
 alias todo="vim ~/.todo"
 
