@@ -121,10 +121,17 @@ stash()
 {
   scp $1 phildo@phildogames.com:~/stash/
 }
-
+stashr()
+{
+  scp -r $1 phildo@phildogames.com:~/stash/
+}
 snatch()
 {
   scp phildo@phildogames.com:~/stash/$1 .
+}
+snatchr()
+{
+  scp -r phildo@phildogames.com:~/stash/$1 .
 }
 
 # ARIS work shortcuts
