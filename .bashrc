@@ -134,11 +134,6 @@ snatchr()
   scp -r phildo@phildogames.com:~/stash/$1 .
 }
 
-# ARIS work shortcuts
-ARIS="~/Desktop/iOSClient/ARIS.xcworkspace"
-alias aris="open ~/Desktop/iOSClient/ARIS.xcworkspace"
-alias cdaris="cd ~/Desktop/iOSClient"
-
 DESK="~/Desktop"
 alias cddesk="cd $DESK"
 
