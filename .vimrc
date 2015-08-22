@@ -109,6 +109,7 @@ set makeprg=amake
 
 " mapping for make
 nnoremap <C-g> :make<CR>
+nnoremap <C-h> :make run<CR>
 
 " gcc error traversal
 nnoremap [q :cprevious<CR>

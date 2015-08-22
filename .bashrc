@@ -146,20 +146,16 @@ alias cdpix="cd $PIX"
 alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
-R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,imgur.com,twitter.com,youtube.com"
+#R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,imgur.com,twitter.com,youtube.com"
+R2L_NAMES="reddit.com,imgur.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
 
 export EDITOR="vim"
-
-# Android dev (this is obnoxious)
-export ANDROID_SDK="/Developer/android-sdk"
-export ANDROID_NDK="/Developer/android-ndk"
-export ANDROID_MOTO="/Developer/moto"
-export PATH="$PATH:$ANDROID_SDK/tools:$ANDROID_SDK/platform-tools:$ANDROID_NDK:$ANDROID_MOTO"
 
 alias tmuxn="tmux new -s do"
 alias tmuxa="tmux attach -t do"
 alias mux="tmuxn || tmuxa"
 
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
+
