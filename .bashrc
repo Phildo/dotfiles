@@ -1,7 +1,7 @@
 [[ -r /etc/bashrc ]] && . /etc/bashrc
 
 #put /usr/local/bin before /usr/bin (already in PATH) for brew stuff
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts:/usr/local/bin/phildoscripts/other"
 export PS1="\W \$ "
 
 # when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO),
@@ -35,6 +35,10 @@ vs()
 vg()
 {
   vim `grep -Ilir --exclude=tags --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
+}
+vcsg()
+{
+  vim `grep -Ilr --exclude=tags --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
 }
 
 # use find to open all files w/ name containing text
