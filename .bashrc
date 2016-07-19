@@ -1,7 +1,10 @@
 [[ -r /etc/bashrc ]] && . /etc/bashrc
 
+PHILDOSCRIPTS="/usr/local/bin/phildoscripts"
+alias phildoscripts="cd $PHILDOSCRIPTS"
+
 #put /usr/local/bin before /usr/bin (already in PATH) for brew stuff
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:/usr/local/bin/phildoscripts:/usr/local/bin/phildoscripts/other"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$PHILDOSCRIPTS:$PHILDOSCRIPTS/other"
 export PS1="\W \$ "
 
 # when using vim to open one file that ends in "." (and no such file exists, but files with that prefix DO),
@@ -140,13 +143,6 @@ snatchr()
 
 DESK="~/Desktop"
 alias cddesk="cd $DESK"
-
-FG="~/Desktop/four-generals"
-alias cdfg="cd $FG"
-
-PIX="~/Desktop/pixQL"
-alias cdpix="cd $PIX"
-
 alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
