@@ -157,5 +157,6 @@ alias tmuxn="tmux new -s do"
 alias tmuxa="tmux attach -t do"
 alias mux="tmuxn || tmuxa"
 
+[[ -r ~/.bashrc_native ]] && . ~/.bashrc_native
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
 
