@@ -50,6 +50,10 @@ set hlsearch
 " Color
 colorscheme desert
 
+" Customizations on Scheme
+hi Search guibg=#262626
+hi Search ctermbg=235
+
 " Between-file state saves
 set viminfo='100,<200,s10,h 
 

@@ -99,6 +99,7 @@ line()
 shopt -s histverify
 
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
+alias csgr="grep -Ir --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gr="grep -Iir --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gdb="gdb -q"
 
@@ -139,6 +140,14 @@ snatch()
 snatchr()
 {
   scp -r phildo@phildogames.com:~/stash/$1 .
+}
+scratch()
+{
+  scp $1 phildo@phildogames.com:/var/www/html/scratch/
+}
+scratchr()
+{
+  scp -r $1 phildo@phildogames.com:/var/www/html/scratch/
 }
 
 DESK="~/Desktop"
