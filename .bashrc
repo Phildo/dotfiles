@@ -95,6 +95,11 @@ line()
   echo '-'
 }
 
+rmdups()
+{
+  awk '!seen[$0]++' $2 > $1
+}
+
 # verifies '!' shell expansion before execution
 shopt -s histverify
 
@@ -155,8 +160,7 @@ alias cddesk="cd $DESK"
 alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
-#R2L_NAMES="facebook.com,news.ycombinator.com,reddit.com,imgur.com,twitter.com,youtube.com"
-R2L_NAMES="reddit.com,imgur.com"
+R2L_NAMES="facebook.com,youtube.com,twitter.com,coinbase.com,twitch.com,reddit.com,imgur.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
 
