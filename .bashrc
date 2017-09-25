@@ -95,7 +95,7 @@ line()
   echo '-'
 }
 
-rmdups()
+awkrmdups()
 {
   awk '!seen[$0]++' $2 > $1
 }
@@ -129,6 +129,7 @@ alias neo="ssh root@neo.arisgames.org"
 alias trinity="ssh root@trinity.arisgames.org"
 alias morpheus="ssh root@morpheus.arisgames.org"
 alias phildo="ssh phildo@phildogames.com"
+alias stream="ssh phildo@streamdoodle.com"
 
 stash()
 {

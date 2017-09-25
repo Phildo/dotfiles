@@ -30,6 +30,9 @@ set smarttab
 set shiftwidth=2
 set softtabstop=2
 
+" Backspace
+set backspace=2
+
 " Wrap
 set nowrap
 set hidden
