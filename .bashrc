@@ -44,12 +44,6 @@ vcsg()
   vim `grep -Ilr --exclude=tags --exclude-dir={.git,.AppleDouble} "$@" . | xargs`
 }
 
-# use find to open all files w/ name containing text
-vf()
-{
-  vim `find . -iname "$@" | xargs`
-}
-
 # i often accidentally a space before the 't' (ex: "gi tstatus")
 gi()
 {
@@ -57,11 +51,6 @@ gi()
 }
 
 alias ls="ls -G"
-
-cdl()
-{
-  cd "$@"; ls
-}
 
 # minimal ls with dates edited
 lst()
@@ -108,14 +97,6 @@ alias csgr="grep -Ir --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gr="grep -Iir --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gdb="gdb -q"
 
-alias v="vim"
-alias c="clear"
-
-# runs makefile for project in current directory (requires amake)
-alias mg="amake go"
-# runs test makefile for project in current directory (requires amake)
-alias mt="amake test"
-
 # quickly create server running in background
 #[n]ohup [py]thon [s]erver [s]ilent
 alias pys="python -m SimpleHTTPServer &"
@@ -124,12 +105,7 @@ alias npys="nohup python -m SimpleHTTPServer &"
 alias npyss="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
 
 # quick ssh shortcuts
-alias dev="ssh pdougherty@dev.arisgames.org"
-alias neo="ssh root@neo.arisgames.org"
-alias trinity="ssh root@trinity.arisgames.org"
-alias morpheus="ssh root@morpheus.arisgames.org"
 alias phildo="ssh phildo@phildogames.com"
-alias stream="ssh phildo@streamdoodle.com"
 
 stash()
 {
@@ -156,12 +132,11 @@ scratchr()
   scp -r $1 phildo@phildogames.com:/var/www/html/scratch/
 }
 
-DESK="~/Desktop"
-alias cddesk="cd $DESK"
+alias cddesk="cd ~/Desktop"
 alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
-R2L_NAMES="facebook.com,youtube.com,twitter.com,coinbase.com,twitch.com,reddit.com,imgur.com"
+R2L_NAMES="reddit.com,twitter.com,imgur.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
 

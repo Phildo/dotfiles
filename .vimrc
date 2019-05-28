@@ -125,6 +125,12 @@ nnoremap ]q :cnext<CR>
 set laststatus=2
 set statusline=%-3.3n%=%F
 
+" allow backspace in insert mode
+set backspace=indent,eol,start
+
+" let osx copy to clipboard
+" set clipboard=unnamed
+
 " vundle
 if isdirectory("~/.vim/bundle")
 set rtp+=~/.vim/bundle/Vundle.vim

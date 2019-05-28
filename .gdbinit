@@ -11,3 +11,4 @@ end
 
 loadbp
 
+set startup-with-shell off
