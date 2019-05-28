@@ -2,7 +2,7 @@
 " set shell=bash\ --login
 
 " Auto cd to directory
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+" autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " vim, not vi
 set nocompatible

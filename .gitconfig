@@ -4,6 +4,7 @@
 [push]
   default = current
 [diff]
+	tool = vimdiff
 [color]
   ui = true
   status = auto
@@ -13,6 +14,9 @@
   excludesfile = /Users/pdougherty/.gitignore
 [merge]
   tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+  prompt = false
 [alias]
   st = status
   ci = commit
@@ -52,3 +56,6 @@
   ra = !git r --all
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
+[difftool]
+	prompt = true
+	prompt = false

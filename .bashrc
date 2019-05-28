@@ -94,7 +94,7 @@ shopt -s histverify
 
 # recursive grep that ignores case and doesn't search directories you probably didn't want to search
 alias csgr="grep -Ir --exclude=tags --exclude-dir={.git,.AppleDouble}"
-alias gr="grep -Iir --exclude=tags --exclude-dir={.git,.AppleDouble}"
+alias gr="grep -Iir --exclude=scriptmn.js --exclude=tags --exclude-dir={.git,.AppleDouble}"
 alias gdb="gdb -q"
 
 # quickly create server running in background
@@ -106,6 +106,7 @@ alias npyss="nohup python -m SimpleHTTPServer >/dev/null 2>&1 &"
 
 # quick ssh shortcuts
 alias phildo="ssh phildo@phildogames.com"
+alias personal="ssh phildo@phildopersonal.com"
 
 stash()
 {
@@ -125,11 +126,11 @@ snatchr()
 }
 scratch()
 {
-  scp $1 phildo@phildogames.com:/var/www/html/scratch/
+  scp $1 phildo@phildogames.com:/var/www/html/phildogames/scratch/
 }
 scratchr()
 {
-  scp -r $1 phildo@phildogames.com:/var/www/html/scratch/
+  scp -r $1 phildo@phildogames.com:/var/www/html/phildogames/scratch/
 }
 
 alias cddesk="cd ~/Desktop"

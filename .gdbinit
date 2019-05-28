@@ -1,14 +1,12 @@
-set unwindonsignal on
-set history save
+#set unwindonsignal on
+#set history save
 
-define savebp
-save breakpoints .gdb_bps
-end
+#define savebp
+#save breakpoints .gdb_bps
+#end
 
-define loadbp
-source .gdb_bps
-end
-
-loadbp
+#define loadbp
+#source .gdb_bps
+#end
 
 set startup-with-shell off
