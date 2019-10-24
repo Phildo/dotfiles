@@ -133,11 +133,16 @@ scratchr()
   scp -r $1 phildo@phildogames.com:/var/www/html/phildogames/scratch/
 }
 
+timestamp()
+{
+  date | sed 's/ //g'
+}
+
 alias cddesk="cd ~/Desktop"
 alias todo="vim ~/.todo"
 
 # for r2l (route 2 local) (github.com/Phildos/r2l)
-R2L_NAMES="reddit.com,twitter.com,imgur.com"
+R2L_NAMES="reddit.com,twitter.com,api.twitter.com,twimg.com,abs.twimg.com,pbs.twimg.com,imgur.com"
 alias block="sudo R2L_NAMES=$R2L_NAMES r2l -e"
 alias unblock="sudo r2l -u"
 
@@ -149,4 +154,3 @@ alias mux="tmuxn || tmuxa"
 
 [[ -r ~/.bashrc_native ]] && . ~/.bashrc_native
 [[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
-

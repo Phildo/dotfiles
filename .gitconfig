@@ -1,10 +1,10 @@
 [user]
-  name = Phildo
+  name = Phil Dougherty
   email = phildo211@gmail.com
 [push]
   default = current
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [color]
   ui = true
   status = auto
@@ -57,5 +57,5 @@
   l = "!. ~/.githelpers && pretty_git_log"
   la = !git l --all
 [difftool]
-	prompt = true
-	prompt = false
+  prompt = true
+  prompt = false
