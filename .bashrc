@@ -135,7 +135,8 @@ scratchr()
 
 timestamp()
 {
-  date | sed 's/ //g'
+  #date | sed -e 's/ //g' -e 's/://g'
+  date +"%Y%m%d%H%M%S"
 }
 
 alias cddesk="cd ~/Desktop"

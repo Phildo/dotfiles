@@ -108,7 +108,7 @@ nnoremap <C-a> :A<CR>
 nnoremap <Space> :nohl<CR>
 
 " show whitespace
-set list listchars=tab:¬-,trail:·,eol:↵
+"set list listchars=tab:¬-,trail:·,eol:↵
 highlight NonText ctermfg=236
 
 " use custom make
