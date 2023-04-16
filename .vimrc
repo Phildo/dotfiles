@@ -57,6 +57,9 @@ colorscheme desert
 hi Search guibg=#262626
 hi Search ctermbg=235
 
+" gvim fonts
+set guifont=Lucida_Console:h12
+
 " Between-file state saves
 set viminfo='100,<200,s10,h 
 
